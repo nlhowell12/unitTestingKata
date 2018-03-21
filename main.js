@@ -97,13 +97,20 @@ console.assert(countedValues("17725384756") === "1(1) 2(1) 3(1) 4(1) 5(2) 6(1) 7
 
 // 8. Given a string of expressions (only variables, +, and -) and an object describing a set of variable/value pairs like {a: 1, b: 7, c: 3, d: 14}, return the result of the expression ("a + b+c -d" would be -3).
 
-function evalExpr(object) {
+function evalExpr(expression, object) {
     console.assert(typeof object === "object", "input is not an object");
+    // let innerExp = expression.replace(/['"]+/g, '');
+    let innerExp = expression.split("");
+    
     let output = object.a + object.b + object.c - object.d;
+    function calc (innerExp) {
+
+    }
+    console.log(innerExp)
     return output;
 }
 
-console.assert(evalExpr({a:1, b:3, c:7, d:13}) === -2, "evalExpr broken");
+console.assert(evalExpr("a+b+c-d", {a:1, b:3, c:7, d:13}) === -2, "evalExpr broken");
 
 
 
