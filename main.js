@@ -1,7 +1,4 @@
-function compare(a, b) {
-    return a - b;
-};
-
+// 1. Reverse a string
 function reverseString(string) {
     let stringSplit = string.split("");
     let output = '';
@@ -15,6 +12,7 @@ function reverseString(string) {
 }
 reverseString("fresh");
 
+// 2. Reverse a sentence ("bob likes dogs" -> "dogs likes bob")
 function reverseSentence(sentence) {
     let sentenceSplit = sentence.split(" ");
     let output = '';
@@ -27,6 +25,11 @@ function reverseSentence(sentence) {
 }
 console.assert(reverseSentence("My life got flipped, turned upside down!") === "down! upside turned flipped, got life My ", "badReverse");
 
+// 3. Find the minimum value in an array
+function compare(a, b) {
+    return a - b;
+};
+
 function minArray(array) {
     let sortedArray = array.sort(compare);
     let minValue = array[0];
@@ -36,6 +39,7 @@ function minArray(array) {
 
 console.assert(minArray([47, 234, 76, 3, 8345]) === 3, "minArray busted");
 
+// 4. Find the maximum value in an array
 function maxArray(array) {
     let sortedArray = array.sort(compare);
     let maxValue = array[array.length - 1];
@@ -45,6 +49,7 @@ function maxArray(array) {
 
 console.assert(maxArray([47, 234, 76, 3, 8345]) === 8345, "maxArray busted");
 
+// 5. Calculate a remainder (given a numerator and denominator)
 function remainder(a, b) {
     let remainder = a / b;
     return remainder;
@@ -53,6 +58,7 @@ function remainder(a, b) {
 console.assert(typeof remainder(5, 3) === "number");
 console.assert(remainder(15, 3) === 5, "remainderBusted");
 
+// 6. Return distinct values from a list including duplicates (i.e. "1 3 5 3 7 3 1 1 5" -> "1 3 5 7")
 function distinctValues(list) {
     let sortedList = list.split("");
     let outputObject = {};
@@ -69,6 +75,7 @@ function distinctValues(list) {
 
 console.assert(distinctValues("13356678") === "135678", "distinctValues busted");
 
+// 7. Return distinct values and their counts (i.e. the list above becomes "1(3) 3(3) 5(2) 7(1)")
 function countedValues(list) {
     let sortedList = list.split("");
     let countedObject = {};
@@ -86,6 +93,18 @@ function countedValues(list) {
 }
 console.assert(countedValues("17725384756") === "1(1) 2(1) 3(1) 4(1) 5(2) 6(1) 7(3) 8(1) ", "countedValues busted");
 
+// 8. Given a string of expressions (only variables, +, and -) and an object describing a set of variable/value pairs like {a: 1, b: 7, c: 3, d: 14}, return the result of the expression ("a + b+c -d" would be -3).
+
 function evalExpr(a, b, c, d, object) {
     
 }
+
+
+
+
+
+
+
+
+
+
