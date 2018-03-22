@@ -6,11 +6,12 @@ function reverseString(string) {
     for (let i = stringSplit.length - 1; i >= 0; i--) {
         output += stringSplit[i];
     }
-    console.assert(stringSplit[0] === "f", "splitFail");
-    console.assert(output === "hserf", "badReverse");
+    
     return output;
 }
-reverseString("fresh");
+console.assert(reverseString("abc") === "cba", "badReverse");
+console.assert(reverseString("fresh") === "hserf", "badReverse");
+
 
 // 2. Reverse a sentence ("bob likes dogs" -> "dogs likes bob")
 function reverseSentence(sentence) {
@@ -20,9 +21,9 @@ function reverseSentence(sentence) {
     for (let i = sentenceSplit.length - 1; i >= 0; i--) {
         output += sentenceSplit[i] + " ";
     }
-    console.assert(sentenceSplit[0] === "My", "splitFail");
     return output;
 }
+console.assert(reverseSentence("do re me fa") === "fa me re do ", "badReverse")
 console.assert(reverseSentence("My life got flipped, turned upside down!") === "down! upside turned flipped, got life My ", "badReverse");
 
 // 3. Find the minimum value in an array
@@ -33,20 +34,18 @@ function compare(a, b) {
 function minArray(array) {
     let sortedArray = array.sort(compare);
     let minValue = array[0];
-    console.assert(array[0] < array[1] < array[2], "Array not sorted");
     return minValue;
 }
-
+console.assert(typeof minArray([1, 2]) === "number", "returning NaN");
 console.assert(minArray([47, 234, 76, 3, 8345]) === 3, "minArray busted");
 
 // 4. Find the maximum value in an array
 function maxArray(array) {
     let sortedArray = array.sort(compare);
     let maxValue = array[array.length - 1];
-    console.assert(array[0] < array[1] < array[2], "Array not sorted");
     return maxValue;
 }
-
+console.assert(typeof maxArray([1, 2]) === "number", "returning NaN");
 console.assert(maxArray([47, 234, 76, 3, 8345]) === 8345, "maxArray busted");
 
 // 5. Calculate a remainder (given a numerator and denominator)
