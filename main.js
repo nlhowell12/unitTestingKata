@@ -67,12 +67,12 @@ function distinctValues(list) {
             outputObject[sortedList[i]] = 0;
             output += sortedList[i];
         }
-        console.assert(output != "", "There is no output");
+        
         outputObject[sortedList[i]]++;
     }
     return output;
 }
-
+console.assert(distinctValues("13356678") != "", "There is no output");
 console.assert(distinctValues("13356678") === "135678", "distinctValues busted");
 
 // 7. Return distinct values and their counts (i.e. the list above becomes "1(3) 3(3) 5(2) 7(1)")
@@ -89,9 +89,9 @@ function countedValues(list) {
     for(number in countedObject) {
             output += number + "(" + countedObject[number] + ")" + " ";
     }
-    console.assert(output != "", "There is no output");
     return output;
 }
+console.assert(countedValues("17725384756") != "", "There is no output");
 console.assert(countedValues("17725384756") === "1(1) 2(1) 3(1) 4(1) 5(2) 6(1) 7(3) 8(1) ", "countedValues busted");
 
 // 8. Given a string of expressions (only variables, +, and -) and an object describing a set of variable/value pairs like {a: 1, b: 7, c: 3, d: 14}, return the result of the expression ("a + b+c -d" would be -3).
