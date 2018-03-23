@@ -105,7 +105,7 @@ function evalExpr(expression, object) {
     return eval(expression);
 }
 
-console.assert(typeof evalExpr("a+b+c-d", {a:1, b:3, c:7, d:13}) === "number", "evalExpr not returning a number")
+console.assert(evalExpr("a+a+b+b", {a:1, b:3, c:7, d:13}) === 8, "evalExpr.replace broken")
 console.assert(evalExpr("a+b+c-d", {a:1, b:3, c:7, d:13}) === -2, "evalExpr broken");
 
 
