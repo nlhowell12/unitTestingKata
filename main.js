@@ -97,10 +97,10 @@ console.assert(countedValues("17725384756") === "1(1) 2(1) 3(1) 4(1) 5(2) 6(1) 7
 // 8. Given a string of expressions (only variables, +, and -) and an object describing a set of variable/value pairs like {a: 1, b: 7, c: 3, d: 14}, return the result of the expression ("a + b+c -d" would be -3).
 
 function evalExpr(expression, object) {
-    var a = object.a
-    var b = object.b;
-    var c = object.c;
-    var d = object.d;
+    let innerExp = expression;
+    for (v in object) {
+        expression = expression.replace(new RegExp(v, "g"), object[v]);
+    }
 
     return eval(expression);
 }
